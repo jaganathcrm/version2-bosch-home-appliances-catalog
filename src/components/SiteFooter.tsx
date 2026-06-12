@@ -55,8 +55,9 @@ const footerStyles = `
     line-height: 1.6;
   }
   .site-footer__copy a {
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
+    color: rgba(255,255,255,0.85);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
   .site-footer__copy a:hover {
     color: #fff;
