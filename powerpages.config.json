@@ -1,0 +1,6 @@
+{
+  "$schema": "https://www.schemastore.org/powerpages.config.json",
+  "siteName": "Version2 Bosch Home Appliances Catalog",
+  "compiledPath": "dist",
+  "defaultLandingPage": "index.html"
+}
