@@ -67,7 +67,7 @@ const gridStyles = `
   }
   .catalog__search:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px rgba(0,136,74,0.15);
+    box-shadow: 0 0 0 2px rgba(24,131,126,0.15);
   }
   .catalog__search::placeholder {
     color: var(--color-text-muted);
