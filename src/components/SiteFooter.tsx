@@ -14,44 +14,15 @@ const footerStyles = `
     padding: 0 var(--spacing-lg);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: var(--spacing-lg);
     flex-wrap: wrap;
-  }
-  .site-footer__brand {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-  }
-  .site-footer__logo-ring {
-    width: 44px;
-    height: 44px;
-    border: 3px solid var(--color-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .site-footer__logo-text {
-    font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 2px;
-  }
-  .site-footer__name {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 2px;
-    text-transform: uppercase;
   }
   .site-footer__copy {
     font-family: var(--font-body);
     font-size: 13px;
     color: rgba(255,255,255,0.55);
-    text-align: right;
+    text-align: left;
     line-height: 1.6;
   }
   .site-footer__copy a {
@@ -75,12 +46,6 @@ export default function SiteFooter() {
       <style>{footerStyles}</style>
       <footer className="site-footer" role="contentinfo">
         <div className="site-footer__inner">
-          <div className="site-footer__brand">
-            <div className="site-footer__logo-ring" aria-hidden="true">
-              <span className="site-footer__logo-text">BSH</span>
-            </div>
-            <span className="site-footer__name">Bosch</span>
-          </div>
           <p className="site-footer__copy">
             © {year} BSH Home Appliances Ltd. All rights reserved.<br />
             <a href="https://www.bosch-home.com" target="_blank" rel="noopener noreferrer">

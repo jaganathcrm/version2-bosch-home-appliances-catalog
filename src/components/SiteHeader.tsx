@@ -85,31 +85,52 @@ const headerStyles = `
   }
 `;
 
-/* Inline Bosch roundel SVG */
-function BoschRoundel({ size = 60 }: { size?: number }) {
+/* Bosch logo: square armature emblem + bold red BOSCH wordmark */
+function BoschLogo({ size = 56 }: { size?: number }) {
+  // viewBox 185×60 — 60×60 emblem square + gap + ~120px wordmark
+  const W = 185, H = 60
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 200 200"
-      width={size}
+      viewBox={`0 0 ${W} ${H}`}
+      width={(size * W) / H}
       height={size}
       role="img"
       aria-label="Bosch logo"
       style={{ flexShrink: 0, display: 'block' }}
     >
-      <circle cx="100" cy="100" r="98" fill="rgba(255,255,255,0.25)" />
-      <circle cx="100" cy="100" r="74" fill="rgba(255,255,255,0.15)" />
+      {/* White square emblem background */}
+      <rect x="0" y="0" width="60" height="60" fill="#fff" />
+
+      {/* Outer dark ring */}
+      <circle cx="30" cy="30" r="26" fill="#1A1A1A" />
+      {/* White inner circle (slot gap) */}
+      <circle cx="30" cy="30" r="22" fill="#fff" />
+
+      {/* 4 armature rotor wedge segments (alternating, every 90°) */}
+      {/* Segment: E→SE  (0°→45°) */}
+      <path d="M30,30 L52,30 A22,22,0,0,1,45.56,45.56 Z" fill="#1A1A1A" />
+      {/* Segment: S→SW  (90°→135°) */}
+      <path d="M30,30 L30,52 A22,22,0,0,1,14.44,45.56 Z" fill="#1A1A1A" />
+      {/* Segment: W→NW  (180°→225°) */}
+      <path d="M30,30 L8,30 A22,22,0,0,1,14.44,14.44 Z" fill="#1A1A1A" />
+      {/* Segment: N→NE  (270°→315°) */}
+      <path d="M30,30 L30,8 A22,22,0,0,1,45.56,14.44 Z" fill="#1A1A1A" />
+
+      {/* Center shaft hub */}
+      <circle cx="30" cy="30" r="7" fill="#1A1A1A" />
+      <circle cx="30" cy="30" r="4" fill="#fff" />
+
+      {/* BOSCH wordmark — bold red capitals */}
       <text
-        x="100" y="116"
-        textAnchor="middle"
-        fontFamily="'IBM Plex Sans', Arial, sans-serif"
-        fontWeight="700"
-        fontSize="40"
-        letterSpacing="2"
-        fill="#FFFFFF"
-      >
-        BOSCH
-      </text>
+        x="70"
+        y="43"
+        fontFamily="'Arial Black', 'Arial Bold', Arial, sans-serif"
+        fontWeight="900"
+        fontSize="30"
+        fill="#E20015"
+        letterSpacing="1"
+      >BOSCH</text>
     </svg>
   )
 }
@@ -122,7 +143,7 @@ export default function SiteHeader() {
         <div className="site-header__inner">
           <div className="site-header__brand">
             <div className="site-header__logo-wrap">
-              <BoschRoundel size={72} />
+              <BoschLogo size={56} />
             </div>
             <div className="site-header__titles">
               <h1 className="site-header__title">Discover Bosch Home Appliances</h1>
