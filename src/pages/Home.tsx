@@ -116,7 +116,7 @@ const PRODUCTS: Product[] = [
     description: '363 L total capacity (279 + 84 L). NoFrost technology prevents ice build-up forever. VitaFresh drawers keep food fresh up to 2× longer.',
     price: 74990,
     imageUrl: 'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=640&h=440&fit=crop',
-    imageAlt: 'Bosch stainless steel fridge freezer standing in a modern kitchen',
+    imageAlt: 'Stainless steel fridge freezer in a modern kitchen',
   },
   {
     id: 'wau28ph0gg',
@@ -126,7 +126,7 @@ const PRODUCTS: Product[] = [
     description: '9 kg capacity, 1400 rpm. EcoSilence Drive™ motor is ultra-quiet and energy-efficient. i-DOS automatic dosing saves detergent on every wash.',
     price: 54990,
     imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&h=440&fit=crop',
-    imageAlt: 'Bosch front-load washing machine with digital display panel',
+    imageAlt: 'White front-load washing machine with digital display panel',
   },
   {
     id: 'sms6eci07e',
@@ -135,8 +135,8 @@ const PRODUCTS: Product[] = [
     category: 'Dishwashers',
     description: '14 place settings, 9 programmes. PerfectDry™ uses zeolite minerals to deliver sparkling, dry results on every cycle — including plastics.',
     price: 64990,
-    imageUrl: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=640&h=440&fit=crop',
-    imageAlt: 'Bosch open dishwasher showing clean white interior and cutlery basket',
+    imageUrl: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=640&h=440&fit=crop',
+    imageAlt: 'Open dishwasher loaded with clean dishes and cutlery',
   },
   {
     id: 'hbg5780s0b',
@@ -145,8 +145,8 @@ const PRODUCTS: Product[] = [
     category: 'Ovens',
     description: '71 L capacity, 10 heating functions. Pyrolytic self-cleaning burns residue to ash. PerfectBake sensor auto-adjusts temperature for flawless results.',
     price: 62990,
-    imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=640&h=440&fit=crop',
-    imageAlt: 'Bosch built-in oven with stainless steel finish and digital touch control panel',
+    imageUrl: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=640&h=440&fit=crop',
+    imageAlt: 'Built-in stainless steel oven with digital touch control panel',
   },
   {
     id: 'kge36awca',
@@ -155,8 +155,8 @@ const PRODUCTS: Product[] = [
     category: 'Refrigerators',
     description: '308 L total capacity. SuperCooling function rapidly chills new groceries without warming stored food. FreshSense sensors continuously monitor the interior.',
     price: 42990,
-    imageUrl: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=640&h=440&fit=crop',
-    imageAlt: 'Bosch white fridge freezer in a bright family kitchen',
+    imageUrl: 'https://images.unsplash.com/photo-1543353071-087092ec393a?w=640&h=440&fit=crop',
+    imageAlt: 'White fridge freezer with freezer compartment in a kitchen',
   },
   {
     id: 'wgb256a40',
@@ -165,8 +165,8 @@ const PRODUCTS: Product[] = [
     category: 'Washing Machines',
     description: '10 kg, 1600 rpm, Wi-Fi enabled via Home Connect app. Iron Assist sensor adapts drum movement for easier ironing. EcoSilence Drive™.',
     price: 74990,
-    imageUrl: 'https://images.unsplash.com/photo-1545208698-b0f6e4cfbed1?w=640&h=440&fit=crop',
-    imageAlt: 'Modern Bosch Serie 8 washing machine in a clean contemporary laundry room',
+    imageUrl: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=640&h=440&fit=crop',
+    imageAlt: 'Front-load washing machine drum with clothes inside',
   },
 ]
 
