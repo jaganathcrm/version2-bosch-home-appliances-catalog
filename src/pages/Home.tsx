@@ -115,8 +115,8 @@ const PRODUCTS: Product[] = [
     category: 'Refrigerators',
     description: '363 L total capacity (279 + 84 L). NoFrost technology prevents ice build-up forever. VitaFresh drawers keep food fresh up to 2× longer.',
     price: 74990,
-    imageUrl: 'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=640&h=440&fit=crop',
-    imageAlt: 'Stainless steel fridge freezer in a modern kitchen',
+    imageUrl: 'https://media3.bsh-group.com/Images/600x/28754775_IN_Homepage_Refrigerators.webp',
+    imageAlt: 'Bosch refrigerators promotional image',
   },
   {
     id: 'wau28ph0gg',
@@ -125,8 +125,8 @@ const PRODUCTS: Product[] = [
     category: 'Washing Machines',
     description: '9 kg capacity, 1400 rpm. EcoSilence Drive™ motor is ultra-quiet and energy-efficient. i-DOS automatic dosing saves detergent on every wash.',
     price: 54990,
-    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&h=440&fit=crop',
-    imageAlt: 'White front-load washing machine with digital display panel',
+    imageUrl: 'https://media3.bsh-group.com/Images/600x/28754773_IN_Homepage_Laundry.webp',
+    imageAlt: 'Bosch laundry appliances promotional image',
   },
   {
     id: 'sms6eci07e',
@@ -135,8 +135,8 @@ const PRODUCTS: Product[] = [
     category: 'Dishwashers',
     description: '14 place settings, 9 programmes. PerfectDry™ uses zeolite minerals to deliver sparkling, dry results on every cycle — including plastics.',
     price: 64990,
-    imageUrl: 'https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=640&h=440&fit=crop',
-    imageAlt: 'Open dishwasher loaded with clean dishes and cutlery',
+    imageUrl: 'https://media3.bsh-group.com/Images/600x/28754774_IN_Homepage_Dishwashers.webp',
+    imageAlt: 'Bosch dishwashers promotional image',
   },
   {
     id: 'hbg5780s0b',
@@ -145,8 +145,8 @@ const PRODUCTS: Product[] = [
     category: 'Ovens',
     description: '71 L capacity, 10 heating functions. Pyrolytic self-cleaning burns residue to ash. PerfectBake sensor auto-adjusts temperature for flawless results.',
     price: 62990,
-    imageUrl: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=640&h=440&fit=crop',
-    imageAlt: 'Built-in stainless steel oven with digital touch control panel',
+    imageUrl: 'https://media3.bsh-group.com/Images/600x/25476265_HBG7784B1_STP_526x310.webp',
+    imageAlt: 'Bosch oven product image',
   },
   {
     id: 'kge36awca',
@@ -155,8 +155,8 @@ const PRODUCTS: Product[] = [
     category: 'Refrigerators',
     description: '308 L total capacity. SuperCooling function rapidly chills new groceries without warming stored food. FreshSense sensors continuously monitor the interior.',
     price: 42990,
-    imageUrl: 'https://images.unsplash.com/photo-1543353071-087092ec393a?w=640&h=440&fit=crop',
-    imageAlt: 'White fridge freezer with freezer compartment in a kitchen',
+    imageUrl: 'https://media3.bsh-group.com/Images/600x/25204110_RefrigeratorRange_WebsiteTeaserBanners_900x120013.webp',
+    imageAlt: 'Bosch refrigerator range promotional image',
   },
   {
     id: 'wgb256a40',
@@ -165,8 +165,8 @@ const PRODUCTS: Product[] = [
     category: 'Washing Machines',
     description: '10 kg, 1600 rpm, Wi-Fi enabled via Home Connect app. Iron Assist sensor adapts drum movement for easier ironing. EcoSilence Drive™.',
     price: 74990,
-    imageUrl: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=640&h=440&fit=crop',
-    imageAlt: 'Front-load washing machine drum with clothes inside',
+    imageUrl: 'https://media3.bsh-group.com/Images/600x/28754773_IN_Homepage_Laundry.webp',
+    imageAlt: 'Bosch laundry appliances promotional image',
   },
 ]
 
