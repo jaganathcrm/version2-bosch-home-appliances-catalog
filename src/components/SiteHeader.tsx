@@ -27,12 +27,13 @@ const headerStyles = `
   }
   .site-header__topline {
     display: flex;
-    align-items: center;
+   align-items: flex-start;
     gap: var(--spacing-md);
     flex-wrap: wrap;
   }
   .site-header__logo-wrap {
     flex-shrink: 0;
+   padding-top: 2px;
   }
   .site-header__logo-img {
    height: 48px;
@@ -42,11 +43,13 @@ const headerStyles = `
   }
   .site-header__titles {
    display: flex;
-   align-items: center;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 4px;
   }
   .site-header__title {
    font-family: var(--font-display);
-   font-size: 2.1rem;
+   font-size: 2.05rem;
    font-weight: 800;
    line-height: 1;
    color: #fff;
@@ -56,7 +59,7 @@ const headerStyles = `
   }
   .site-header__tagline {
    font-family: var(--font-body);
-   font-size: 1rem;
+   font-size: 0.95rem;
    color: rgba(255,255,255,0.88);
    font-weight: var(--font-weight-normal);
    margin: 0;
@@ -87,9 +90,9 @@ export default function SiteHeader() {
               </div>
               <div className="site-header__titles">
                 <h1 className="site-header__title">Discover Bosch Home Appliances</h1>
+                <p className="site-header__tagline">Invented for life.</p>
               </div>
             </div>
-            <p className="site-header__tagline">Invented for life.</p>
           </div>
         </div>
       </header>
