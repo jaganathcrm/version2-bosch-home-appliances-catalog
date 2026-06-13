@@ -1,13 +1,13 @@
 /* =====================================================
    Version2 Bosch Home Appliances Catalog — Design System
    Plan: create-site-plan-1.html
-   Primary: #007BC0 | BG: #F4F4F4 | Text: #1A1A1A
+   Primary: #00884A | BG: #F4F4F4 | Text: #1A1A1A
    Fonts: IBM Plex Sans (body) + Barlow Condensed (headings)
    ===================================================== */
 
 :root {
-  --color-primary: #007BC0;
-  --color-primary-dark: #005A8F;
+  --color-primary: #00884A;
+  --color-primary-dark: #00663A;
   --color-secondary: #2D2D2D;
   --color-bg: #F4F4F4;
   --color-surface: #FFFFFF;
