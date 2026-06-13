@@ -307,7 +307,7 @@ adx_webfile:
   IsDeleted: false
 - RecordId: 752fb3c5-6786-4db0-afca-1219428750b4
   DisplayName: 752fb3c5-6786-4db0-afca-1219428750b4
-  CheckSum: 374ec7ef566ff395bd3d970b6114fa5afae46ae01fed4c75b00ad8d58c9cbc74
+  CheckSum: 7ae2e9616249f6f2f617cb864d68dade7746ffa16d30269c48c28f6c0ff22ded
   IsDeleted: false
 - RecordId: 8248c284-cf95-4ff6-a5b0-81891a510083
   DisplayName: 8248c284-cf95-4ff6-a5b0-81891a510083
@@ -324,6 +324,14 @@ adx_webfile:
 - RecordId: eccf7f8d-ba32-47bc-8779-dc88b742520e
   DisplayName: eccf7f8d-ba32-47bc-8779-dc88b742520e
   CheckSum: 454aedf67c2e9962495d4ef1190422805593eeaaa4f3a85ac25fa61fb217e139
+  IsDeleted: false
+- RecordId: f2b9ea30-deed-4b9d-ae97-97ab8c9c0e54
+  DisplayName: f2b9ea30-deed-4b9d-ae97-97ab8c9c0e54
+  CheckSum: 1edf616d310cba1e14ce241bed151d7286be475290d604306997451114abf8e1
+  IsDeleted: false
+- RecordId: f2caacef-201c-4e5d-b808-035416f8cf36
+  DisplayName: f2caacef-201c-4e5d-b808-035416f8cf36
+  CheckSum: 19c9188c0da2743d60e88f2f24414a45295c759a8a9018518edd8f8f5c3febcd
   IsDeleted: false
 adx_weblink:
 - RecordId: 46d100c1-1ab6-41d5-b0c0-be53d9c4632c
@@ -358,7 +366,7 @@ adx_webpage:
   IsDeleted: false
 - RecordId: 5de476e5-30fc-4de8-b029-061a3c320b83
   DisplayName: 5de476e5-30fc-4de8-b029-061a3c320b83
-  CheckSum: 847aff71d7ab55b06b17d80cdd34f081334d2272ece449e6fff215f738695fc7
+  CheckSum: 6b870f90be08c5b7ce96c3b87a6fef61db8fd245bb5f40e41aa69c6bcf745639
   IsDeleted: false
 - RecordId: 8e335061-2af9-4825-bc09-f3badfb753dd
   DisplayName: 8e335061-2af9-4825-bc09-f3badfb753dd
@@ -503,7 +511,7 @@ annotation:
   IsDeleted: false
 - RecordId: 752fb3c5-6786-4db0-afca-1219428750b4
   DisplayName: index.html
-  CheckSum: 4c6998aca913271108282c797fb3c52214a2d0424b4b91a4d10f9fae14b94559
+  CheckSum: 0c37b3a24ed87291a67732253dc19860e08f78b581fa0a29eed5b52cb7ad04f2
   IsDeleted: false
 - RecordId: 8248c284-cf95-4ff6-a5b0-81891a510083
   DisplayName: theme.css
@@ -520,4 +528,12 @@ annotation:
 - RecordId: eccf7f8d-ba32-47bc-8779-dc88b742520e
   DisplayName: portalbasictheme.css
   CheckSum: a1a89826e19624f01bd8a1b4d6cf2064cb7c6d8ae37d1fd564b300e835771ae2
+  IsDeleted: false
+- RecordId: f2b9ea30-deed-4b9d-ae97-97ab8c9c0e54
+  DisplayName: index-NgS_VEI_.css
+  CheckSum: 5f43085fce1f4f098d9425acdf72dc780de468b3da944502d2095c765038b680
+  IsDeleted: false
+- RecordId: f2caacef-201c-4e5d-b808-035416f8cf36
+  DisplayName: Bosch_logo-QpMiQkP0.png
+  CheckSum: ae8185534a76fe298063179c5e684e1ed5f7cf5b3ec5c88aaab580c7ed692b8d
   IsDeleted: false

@@ -141,30 +141,39 @@ Please change the parent <Route path="${j}"> to <Route path="${j==="/"?"*":`${j}
     padding: 0 var(--spacing-lg);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: var(--spacing-lg);
     flex-wrap: wrap;
   }
-  .site-footer__copy {
+  .site-footer__copy,
+  .site-footer__meta {
     font-family: var(--font-body);
     font-size: 13px;
     color: rgba(255,255,255,0.55);
-    text-align: left;
     line-height: 1.6;
   }
-  .site-footer__copy a {
+  .site-footer__copy {
+    text-align: left;
+    flex: 1 1 320px;
+  }
+  .site-footer__meta {
+    text-align: right;
+    flex: 1 1 320px;
+  }
+  .site-footer__meta a {
     color: rgba(255,255,255,0.85);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
-  .site-footer__copy a:hover {
+  .site-footer__meta a:hover {
     color: #fff;
   }
   @media (max-width: 640px) {
     .site-footer__inner { flex-direction: column; align-items: flex-start; }
-    .site-footer__copy { text-align: left; }
+    .site-footer__copy,
+    .site-footer__meta { text-align: left; }
   }
-`;function $0(){const c=new Date().getFullYear();return L.jsxs(L.Fragment,{children:[L.jsx("style",{children:J0}),L.jsx("footer",{className:"site-footer",role:"contentinfo",children:L.jsx("div",{className:"site-footer__inner",children:L.jsxs("p",{className:"site-footer__copy",children:["© ",c," BSH Home Appliances Ltd. All rights reserved.",L.jsx("br",{}),L.jsx("a",{href:"https://www.bosch-home.com",target:"_blank",rel:"noopener noreferrer",children:"bosch-home.com"})," · ","Robert Bosch GmbH · Stuttgart, Germany"]})})})]})}const W0=`
+`;function $0(){const c=new Date().getFullYear();return L.jsxs(L.Fragment,{children:[L.jsx("style",{children:J0}),L.jsx("footer",{className:"site-footer",role:"contentinfo",children:L.jsxs("div",{className:"site-footer__inner",children:[L.jsxs("p",{className:"site-footer__copy",children:["© ",c," BSH Home Appliances Ltd. All rights reserved."]}),L.jsxs("p",{className:"site-footer__meta",children:[L.jsx("a",{href:"https://www.bosch-home.com",target:"_blank",rel:"noopener noreferrer",children:"bosch-home.com"})," · ","Robert Bosch GmbH · Stuttgart, Germany"]})]})})]})}const W0=`
   .product-card {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
