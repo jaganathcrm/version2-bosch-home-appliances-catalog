@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import ProductCard, { type Product } from '../components/ProductCard'
@@ -9,6 +9,15 @@ const gridStyles = `
     margin: 0 auto;
     padding: var(--spacing-2xl) var(--spacing-lg);
   }
+  .catalog__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+    animation: fadeInUp 0.5s ease 0.1s both;
+  }
   .catalog__heading {
     font-family: var(--font-display);
     font-size: 1.75rem;
@@ -16,11 +25,10 @@ const gridStyles = `
     color: var(--color-secondary);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: var(--spacing-xl);
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
-    animation: fadeInUp 0.5s ease 0.1s both;
+    white-space: nowrap;
   }
   .catalog__heading::before {
     content: '';
@@ -30,20 +38,75 @@ const gridStyles = `
     background-color: var(--color-primary);
     flex-shrink: 0;
   }
+  .catalog__search-wrap {
+    position: relative;
+    flex: 1;
+    max-width: 360px;
+    min-width: 200px;
+  }
+  .catalog__search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+  }
+  .catalog__search {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 10px 12px 10px 38px;
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .catalog__search:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(0,86,145,0.15);
+  }
+  .catalog__search::placeholder {
+    color: var(--color-text-muted);
+  }
+  .catalog__count {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    align-self: flex-end;
+    padding-bottom: 2px;
+  }
   .catalog__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
+  }
+  .catalog__empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: 1rem;
+  }
+  .catalog__empty strong {
+    color: var(--color-text);
   }
   @media (max-width: 1024px) {
     .catalog__grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
     .catalog__grid { grid-template-columns: 1fr; }
+    .catalog__toolbar { flex-direction: column; align-items: stretch; }
+    .catalog__search-wrap { max-width: 100%; }
   }
 `;
 
-/* 6 products across 4 categories as specified in the plan */
+/* 6 products — prices in INR, relevant Unsplash images per product type */
 const PRODUCTS: Product[] = [
   {
     id: 'kgn39vleag',
@@ -51,10 +114,9 @@ const PRODUCTS: Product[] = [
     model: 'KGN39VLEAG',
     category: 'Refrigerators',
     description: '363 L total capacity (279 + 84 L). NoFrost technology prevents ice build-up forever. VitaFresh drawers keep food fresh up to 2× longer.',
-    price: 699,
+    price: 74990,
     imageUrl: 'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=640&h=440&fit=crop',
     imageAlt: 'Bosch stainless steel fridge freezer standing in a modern kitchen',
-    energyRating: 'E',
   },
   {
     id: 'wau28ph0gg',
@@ -62,10 +124,9 @@ const PRODUCTS: Product[] = [
     model: 'WAU28PH0GG',
     category: 'Washing Machines',
     description: '9 kg capacity, 1400 rpm. EcoSilence Drive™ motor is ultra-quiet and energy-efficient. i-DOS automatic dosing saves detergent on every wash.',
-    price: 649,
+    price: 54990,
     imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&h=440&fit=crop',
     imageAlt: 'Bosch front-load washing machine with digital display panel',
-    energyRating: 'A',
   },
   {
     id: 'sms6eci07e',
@@ -73,10 +134,9 @@ const PRODUCTS: Product[] = [
     model: 'SMS6ECI07E',
     category: 'Dishwashers',
     description: '14 place settings, 9 programmes. PerfectDry™ uses zeolite minerals to deliver sparkling, dry results on every cycle — including plastics.',
-    price: 799,
+    price: 64990,
     imageUrl: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=640&h=440&fit=crop',
     imageAlt: 'Bosch open dishwasher showing clean white interior and cutlery basket',
-    energyRating: 'A',
   },
   {
     id: 'hbg5780s0b',
@@ -84,10 +144,9 @@ const PRODUCTS: Product[] = [
     model: 'HBG5780S0B',
     category: 'Ovens',
     description: '71 L capacity, 10 heating functions. Pyrolytic self-cleaning burns residue to ash. PerfectBake sensor auto-adjusts temperature for flawless results.',
-    price: 749,
-    imageUrl: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=640&h=440&fit=crop',
-    imageAlt: 'Bosch built-in pyrolytic oven installed in kitchen cabinetry',
-    energyRating: 'A+',
+    price: 62990,
+    imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=640&h=440&fit=crop',
+    imageAlt: 'Bosch built-in oven with stainless steel finish and digital touch control panel',
   },
   {
     id: 'kge36awca',
@@ -95,10 +154,9 @@ const PRODUCTS: Product[] = [
     model: 'KGE36AWCA',
     category: 'Refrigerators',
     description: '308 L total capacity. SuperCooling function rapidly chills new groceries without warming stored food. FreshSense sensors continuously monitor the interior.',
-    price: 479,
+    price: 42990,
     imageUrl: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=640&h=440&fit=crop',
     imageAlt: 'Bosch white fridge freezer in a bright family kitchen',
-    energyRating: 'F',
   },
   {
     id: 'wgb256a40',
@@ -106,17 +164,27 @@ const PRODUCTS: Product[] = [
     model: 'WGB256A40',
     category: 'Washing Machines',
     description: '10 kg, 1600 rpm, Wi-Fi enabled via Home Connect app. Iron Assist sensor adapts drum movement for easier ironing. EcoSilence Drive™.',
-    price: 899,
+    price: 74990,
     imageUrl: 'https://images.unsplash.com/photo-1545208698-b0f6e4cfbed1?w=640&h=440&fit=crop',
     imageAlt: 'Modern Bosch Serie 8 washing machine in a clean contemporary laundry room',
-    energyRating: 'A',
   },
 ]
 
 export default function Home() {
+  const [query, setQuery] = useState('')
+
   useEffect(() => {
     document.title = 'Version2 Bosch Home Appliances Catalog'
   }, [])
+
+  const filtered = query.trim()
+    ? PRODUCTS.filter(p =>
+        p.name.toLowerCase().includes(query.toLowerCase()) ||
+        p.category.toLowerCase().includes(query.toLowerCase()) ||
+        p.model.toLowerCase().includes(query.toLowerCase()) ||
+        p.description.toLowerCase().includes(query.toLowerCase())
+      )
+    : PRODUCTS
 
   return (
     <>
@@ -124,13 +192,39 @@ export default function Home() {
       <SiteHeader />
       <main id="main-content" role="main">
         <section className="catalog" id="catalog" aria-label="Product catalog">
-          <h2 className="catalog__heading">All Products</h2>
+          <div className="catalog__toolbar">
+            <h2 className="catalog__heading">All Products</h2>
+            <div className="catalog__search-wrap">
+              <span className="catalog__search-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </span>
+              <input
+                className="catalog__search"
+                type="search"
+                placeholder="Search by name, category or model…"
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                aria-label="Search products"
+              />
+            </div>
+            <span className="catalog__count" aria-live="polite" aria-atomic="true">
+              {filtered.length} of {PRODUCTS.length} products
+            </span>
+          </div>
           <div className="catalog__grid" role="list" aria-label="Bosch appliance products">
-            {PRODUCTS.map((p, i) => (
-              <div key={p.id} role="listitem">
-                <ProductCard product={p} animationDelay={i * 80} />
-              </div>
-            ))}
+            {filtered.length === 0 ? (
+              <p className="catalog__empty">
+                No products found for <strong>"{query}"</strong>. Try a different search.
+              </p>
+            ) : (
+              filtered.map((p, i) => (
+                <div key={p.id} role="listitem">
+                  <ProductCard product={p} animationDelay={i * 80} />
+                </div>
+              ))
+            )}
           </div>
         </section>
       </main>

@@ -41,7 +41,7 @@ const headerStyles = `
   }
   .site-header__title {
     font-family: var(--font-display);
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 800;
     line-height: 1.05;
     color: #fff;
@@ -125,15 +125,10 @@ export default function SiteHeader() {
               <BoschRoundel size={72} />
             </div>
             <div className="site-header__titles">
-              <p className="site-header__eyebrow">Home Appliances</p>
-              <h1 className="site-header__title">Product Catalog</h1>
+              <h1 className="site-header__title">Discover Bosch Home Appliances</h1>
               <p className="site-header__tagline">Invented for life.</p>
               <div className="site-header__divider" aria-hidden="true" />
             </div>
-          </div>
-          <div className="site-header__meta" aria-label="Catalog stats">
-            <div className="site-header__meta-label">Products</div>
-            <div className="site-header__meta-value" aria-label="6 products">6</div>
           </div>
         </div>
       </header>

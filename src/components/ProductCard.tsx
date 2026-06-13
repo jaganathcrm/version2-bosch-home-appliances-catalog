@@ -59,19 +59,7 @@ const cardStyles = `
     padding: 5px 12px;
   }
   .product-card__energy {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 36px;
-    height: 36px;
-    background-color: #1B5E20;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-body);
+    display: none;
   }
   .product-card__body {
     padding: var(--spacing-lg);
@@ -177,10 +165,10 @@ export default function ProductCard({ product, animationDelay = 0 }: Props) {
           <p className="product-card__desc">{product.description}</p>
           <div className="product-card__footer">
             <div>
-              <div className="product-card__price" aria-label={`Price: £${product.price}`}>
-                £{product.price.toLocaleString()}
+              <div className="product-card__price" aria-label={`Price: ₹${product.price}`}>
+                ₹{product.price.toLocaleString('en-IN')}
               </div>
-              <div className="product-card__price-sub">RRP incl. VAT</div>
+              <div className="product-card__price-sub">MRP incl. taxes</div>
             </div>
             <button
               className="product-card__btn"
